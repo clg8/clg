@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "John Smith",
+    "Age": 32,
+    "Gender": "Male"
+  },
+  {
+    "Name": "Emma Johnson",
+    "Age": 28,
+    "Gender": "Female"
+  }
+]
