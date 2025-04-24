@@ -73,4 +73,49 @@ df_dummies = pd.get_dummies(df, columns=['Color', 'Size'])
 
 # Display result
 print(df_dummies)
+#4.1
+import numpy as np
+from scipy import stats
+
+# Sample scores
+traditional_scores = [75, 80, 85, 70, 90]
+new_method_scores = [88, 92, 85, 95, 90]
+
+# Perform independent t-test
+t_stat, p_value = stats.ttest_ind(new_method_scores, traditional_scores)
+
+print("T-Statistic:", t_stat)
+print("P-Value:", p_value)
+
+# Interpret result
+alpha = 0.05
+if p_value < alpha:
+    print("Reject the null hypothesis: The new method has a significant effect.")
+else:
+    print("Fail to reject the null hypothesis: No significant difference detected.")
+#4.2
+import pandas as pd
+from scipy.stats import chi2_contingency
+
+# Contingency table: Gender vs. Product Preference
+data = pd.DataFrame({
+    'Product A': [30, 20],  # [Male, Female]
+    'Product B': [10, 25],
+    'Product C': [20, 30]
+}, index=['Male', 'Female'])
+
+# Perform chi-square test
+chi2, p, dof, expected = chi2_contingency(data)
+
+print("Chi-Square Statistic:", chi2)
+print("P-Value:", p)
+print("Degrees of Freedom:", dof)
+print("Expected Frequencies:\n", expected)
+
+# Interpret result
+alpha = 0.05
+if p < alpha:
+    print("Reject the null hypothesis: There is a significant relationship.")
+else:
+    print("Fail to reject the null hypothesis: No significant relationship.")
 
