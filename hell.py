@@ -55,3 +55,22 @@ print(standardized_df)
 
 print("\nNormalized Data:")
 print(normalized_df)
+#3.2
+import pandas as pd
+
+# Sample data
+data = {
+    'Color': ['Red', 'Blue', 'Green', 'Blue', 'Red'],
+    'Size': ['S', 'M', 'L', 'S', 'M'],
+    'Price': [10.99, 12.50, 9.99, 11.50, 13.00]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Perform dummification
+df_dummies = pd.get_dummies(df, columns=['Color', 'Size'])
+
+# Display result
+print(df_dummies)
+
